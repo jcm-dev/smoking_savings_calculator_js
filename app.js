@@ -56,7 +56,11 @@ function showError(error){
   UIerrorDiv.appendChild(document.createTextNode(error));
   // insert UIerrorDiv
   UIcard.insertBefore(UIerrorDiv, UIheading);
+  // timeout and clear error after 3 seconds
+  setTimeout(clearError, 3000);
 
 }
-
 // CLEAR ERROR
+function clearError(){
+  document.querySelector('.alert').remove();
+}
